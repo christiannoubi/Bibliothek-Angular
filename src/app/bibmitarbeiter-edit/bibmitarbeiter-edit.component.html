@@ -1,0 +1,51 @@
+<mat-card>
+  <form #bibmitarbeiterForm= "ngForm" (ngSubmit)="save(bibmitarbeiterForm.value)">
+    <mat-card-header>
+      <mat-card-title><h2>{{ bibmitarbeiter.name ? 'Edit' : 'Add'}} Bibmitarbeiter</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="bibmitarbeiter.href">
+      <mat-form-field>
+        <input matInput placeholder= "Bibmitarbeiter Name" [(ngModel)]="bibmitarbeiter.name"
+               required name="name" #name>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="bibmitarbeiter.href">
+      <mat-form-field>
+        <input matInput placeholder= "Bibmitarbeiter address" [(ngModel)]="bibmitarbeiter.address"
+               required name="address" #name>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="bibmitarbeiter.href">
+      <mat-form-field>
+        <input matInput placeholder= "Bibmitarbeiter location" [(ngModel)]="bibmitarbeiter.location"
+               required name="location" #name>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="bibmitarbeiter.href">
+      <mat-form-field>
+        <input matInput placeholder= "Bibmitarbeiter Email" [(ngModel)]="bibmitarbeiter.email"
+               required name="email" #name>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="bibmitarbeiter.href">
+      <mat-form-field>
+        <input matInput placeholder= "Bibmitarbeiter telefonnummer" [(ngModel)]="bibmitarbeiter.telefonnummer"
+               required name="telefonnummer" #name>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!bibmitarbeiterForm.form.valid">Save</button>
+      <button mat-raised-button color="secondary" (click)="remove(bibmitarbeiter.id)"
+              type="button">Delete</button>
+      <a mat-button routerLink="/employee-list">Cancel</a>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
